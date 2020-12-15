@@ -1,9 +1,9 @@
 var express = require("express");
 var router = express.Router();
 
+const webhookHandler = require("./handler/webhook");
+
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.send("payments");
-});
+router.post("/", webhookHandler.webhook);
 
 module.exports = router;
